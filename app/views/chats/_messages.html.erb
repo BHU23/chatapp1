@@ -1,0 +1,8 @@
+<%= turbo_frame_tag 'messages-area' do %>
+<%= render messages %>
+<% end %>
+<%= turbo_frame_tag 'message-form' do %>
+<%= render 'chats/form', room: room %>
+<% end %>
+
+<%= turbo_stream_from room %>

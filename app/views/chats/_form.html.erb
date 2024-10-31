@@ -1,0 +1,6 @@
+<%= form_with(model: [room, Message.new]) do |form| %>
+    <div id='new-message'>
+        <%= form.text_field :content %>
+        <%= form.submit %>
+    </div>
+<% end %>

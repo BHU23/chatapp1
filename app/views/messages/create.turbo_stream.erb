@@ -1,0 +1,6 @@
+<%= turbo_stream.append "messages-area",
+partial: "message",
+locals: { message: @message } %>
+<%= turbo_stream.update "message-form",
+    partial: "chats/form",
+    locals: { room: @message.room} %>

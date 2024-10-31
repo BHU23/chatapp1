@@ -1,0 +1,8 @@
+<%= link_to room_messages_path(room),
+            data: { turbo_frame: 'room-messages' } do %>
+    <div class='room'>
+        <%= room.name %>
+        <%= link_to ">", @room %>
+    </div>
+    
+<% end %>

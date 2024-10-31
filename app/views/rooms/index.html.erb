@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Rooms" %>
+
+<h1>Rooms</h1>
+
+<div id='chatapp'>
+  <div id='rooms'>
+    <% @rooms.each do |room| %>
+      <%= render "room_entry", room: room %>
+    <% end %>
+  </div>
+  <div id='messages'>
+    <%= turbo_frame_tag 'room-messages' do %>
+      <%= render "chats/messages",
+                messages: @messages,
+                room: @room %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "New room", new_room_path %>
